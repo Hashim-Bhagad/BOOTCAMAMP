@@ -43,3 +43,10 @@ let avg = users.reduce((average, val) =>{
 }, 0);
 avg = avg / users.length;
 console.log(`average is: ${avg}`);
+
+let num = BigInt(2) ** BigInt(1000);
+let numStr = num.toString().split('')
+let sum = numStr.reduce((sum, val) =>{
+    return sum + Number(val);
+}, 0);
+console.log(sum);

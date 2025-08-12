@@ -1,20 +1,12 @@
 let limit = 1000000
-let now = new Date();
-let start;
-let end;
 function longestCollatzSequence(limit){
     start = now.getMilliseconds();
     function getLength(limit){
-        let lengths = [];
         let arr = [limit];
-        if(lengths.length >= limit){
-            return arr.length + lengths[limit];
-        }
         while(limit != 1){
             limit = limit % 2 == 0 ? limit / 2 : (limit * 3) + 1;
             arr.push(limit)
         }
-        lengths.splice(limit, 0, arr.length);
         return arr.length;
     }
     let max = 0;
@@ -30,6 +22,6 @@ function longestCollatzSequence(limit){
 }
 
 
-
+let result = longestCollatzSequence(limit)
 console.log("The number which generates the largest collatz sequence is: " + longestCollatzSequence(limit))
 console.log(`time taken = ${end - start}`);
